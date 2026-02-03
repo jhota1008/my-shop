@@ -1,28 +1,9 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import ProductList from './components/ProductList.vue'
 import { useCartStore } from './stores/cart.ts'
 
-// sample products for demo — replace with live Supabase fetch later
-const products = ref([
-  {
-    id: 'p1',
-    title: 'Custom Mini Guitar',
-    description: 'Handmade mini guitar with maple neck',
-    price_cents: 12900,
-    images: [{ url: '/vite.svg', alt: 'mini guitar' }],
-  },
-  {
-    id: 'p2',
-    title: 'Walnut Cutting Board',
-    description: 'Premium walnut board — finished with food-safe oil',
-    price_cents: 6500,
-    images: [{ url: '/src/assets/vue.svg', alt: 'cutting board' }],
-  },
-])
-
 const cart = useCartStore()
-const cartOpen = ref(true)
+const cartOpen = ref(false)
 const isDark = ref(false)
 
 function toggleTheme() {
@@ -49,7 +30,7 @@ function remove(productId: string) {
 
     <v-main>
       <v-container class="mt-6">
-        <ProductList :products="products" />
+        <router-view />
       </v-container>
     </v-main>
 
