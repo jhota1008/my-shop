@@ -19,6 +19,11 @@ import ProductCard from './ProductCard.vue'
 import { useCartStore } from '../stores/cart'
 import { fetchProducts } from '../lib/supabase'
 
+// Accept optional category prop to filter products
+const props = defineProps<{
+  category?: string
+}>()
+
 const items = ref<any[]>([])
 const loading = ref(false)
 const error = ref<string | null>(null)
@@ -29,7 +34,8 @@ async function load() {
   loading.value = true
   error.value = null
   try {
-    const data = await fetchProducts()
+    // Pass category prop to fetchProducts
+    const data = await fetchProducts(props.category)
     items.value = data as any[]
   } catch (err: any) {
     console.error('Failed to load products', err)

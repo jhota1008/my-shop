@@ -10,13 +10,20 @@ if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
 
 export const supabase: SupabaseClient = createClient(SUPABASE_URL ?? '', SUPABASE_ANON_KEY ?? '')
 
-export async function fetchProducts() {
+export async function fetchProducts(category?: string) {
   // Fetch basic product fields and order by created_at desc
-  const { data, error } = await supabase
+  // Optionally filter by category if provided
+  let query = supabase
     .from('products')
-    .select('id, title, slug, description, price_cents, images')
+    .select('id, title, slug, description, price_cents, images, categories')
     .order('created_at', { ascending: false })
     .limit(100)
+
+  if (category) {
+    query = query.contains('categories', [category])
+  }
+
+  const { data, error } = await query
 
   if (error) throw error
   return data ?? []

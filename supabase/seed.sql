@@ -2,7 +2,7 @@
 -- Run this in the Supabase SQL editor to populate your products table with demo data
 
 -- Clear existing products (optional - comment out if you want to keep existing data)
--- DELETE FROM public.products;
+ DELETE FROM public.products;
 
 -- Insert sample guitar and woodworking products
 INSERT INTO public.products (title, slug, description, price_cents, currency, inventory, sku, images, categories, featured) VALUES
@@ -15,7 +15,7 @@ INSERT INTO public.products (title, slug, description, price_cents, currency, in
   5,
   'GTR-002',
   '[{"url": "/vite.svg", "alt": "Electric Guitar", "order": 1}]'::jsonb,
-  ARRAY['guitars', 'electric'],
+  ARRAY['guitar', 'electric'],
   true
 ),
 (
@@ -43,18 +43,6 @@ INSERT INTO public.products (title, slug, description, price_cents, currency, in
   false
 ),
 (
-  'Mini Guitar Display Model',
-  'mini-guitar-display',
-  'Handmade miniature guitar replica, perfect for display. Features real strings and detailed craftsmanship. Approximately 12" tall.',
-  4500,
-  'USD',
-  10,
-  'GTR-003',
-  '[{"url": "/vite.svg", "alt": "Mini Guitar", "order": 1}]'::jsonb,
-  ARRAY['guitars', 'gifts', 'display'],
-  false
-),
-(
   'Custom Guitar Neck',
   'custom-guitar-neck',
   'Hand-carved guitar neck in maple or rosewood. Custom inlays and radius available. Made to order.',
@@ -63,7 +51,7 @@ INSERT INTO public.products (title, slug, description, price_cents, currency, in
   0,
   'GTR-004',
   '[{"url": "/vite.svg", "alt": "Guitar Neck", "order": 1}]'::jsonb,
-  ARRAY['guitars', 'parts'],
+  ARRAY['guitar', 'parts'],
   false
 ),
 (
@@ -76,6 +64,30 @@ INSERT INTO public.products (title, slug, description, price_cents, currency, in
   'WW-004',
   '[{"url": "/vite.svg", "alt": "Phone Stand", "order": 1}]'::jsonb,
   ARRAY['woodworking', 'desk', 'gifts'],
+  false
+),
+(
+  'Guitar Setup & Intonation',
+  'guitar-setup-service',
+  'Professional guitar setup including action adjustment, intonation, truss rod adjustment, and full cleaning. Turnaround: 2-3 days.',
+  7500,
+  'USD',
+  NULL,
+  'SVC-001',
+  '[{"url": "/vite.svg", "alt": "Guitar Setup Service", "order": 1}]'::jsonb,
+  ARRAY['service', 'guitar'],
+  false
+),
+(
+  'Fret Leveling & Crown',
+  'fret-leveling-service',
+  'Complete fret leveling, crowning, and polishing service. Eliminates buzzing and improves playability.',
+  12500,
+  'USD',
+  NULL,
+  'SVC-002',
+  '[{"url": "/vite.svg", "alt": "Fret Service", "order": 1}]'::jsonb,
+  ARRAY['service', 'guitar', 'repair'],
   false
 );
 

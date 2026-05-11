@@ -28,7 +28,26 @@ function goToHomePage() {
       <v-btn icon @click="goToHomePage" aria-label="Go to home page">
         <v-icon>mdi-home</v-icon>
       </v-btn>
-      <v-toolbar-title>My Shop — Guitar & Woodwork</v-toolbar-title>
+      <v-toolbar-title>Guitar & Woodwork</v-toolbar-title>
+      
+      <!-- Navigation Links -->
+      <!-- TODO: Style these nav buttons to look better -->
+      <!-- IDEAS: 
+        - Use v-btn with variant="text" for a cleaner look
+        - Add active state styling (check $route.name)
+        - Make them more prominent or add hover effects
+        - Consider using v-tabs instead of buttons for better UX
+      -->
+      <v-btn variant="text" @click="router.push({ name: 'CustomGuitars' })">
+        Custom Guitars
+      </v-btn>
+      <v-btn variant="text" @click="router.push({ name: 'GuitarServices' })">
+        Services
+      </v-btn>
+      <v-btn variant="text" @click="router.push({ name: 'Woodworking' })">
+        Woodworking
+      </v-btn>
+      
       <v-spacer />
       <v-btn icon @click="toggleTheme" aria-label="Toggle theme">
         <v-icon>mdi-theme-light-dark</v-icon>
