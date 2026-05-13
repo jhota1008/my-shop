@@ -28,16 +28,6 @@
          <h1>{{ product?.title }}</h1>
          <p>${{ (product?.price_cents / 100).toFixed(2) }}</p>
          <p>{{ product?.description }}</p>
-        
-        <!-- Product Options/Preferences Section -->
-        <!-- TODO: Add a section for product customization options -->
-        <!-- IDEAS: 
-          - Color picker (v-color-picker)
-          - Size dropdown (v-select)
-          - Quantity stepper (v-text-field with type="number")
-          - Custom text engraving input (v-text-field)
-          - Finish options (v-radio-group or v-select)
-        -->
 
         <!-- Quantity Selector -->
          <v-text-field

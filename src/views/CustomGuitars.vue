@@ -7,9 +7,6 @@
       </v-col>
     </v-row>
 
-    <!-- Reuse ProductList component with guitar category filter -->
-    <ProductList category="guitar" />
-
     <!-- ADVANCED TODO: Guitar Builder Interface -->
     <!-- IDEAS for future implementation:
       - Step-by-step wizard for choosing:
@@ -26,10 +23,6 @@
     -->
   </v-container>
 </template>
-
-<script setup lang="ts">
-import ProductList from '../components/ProductList.vue'
-</script>
 
 <style scoped>
 /* Add any custom styles here */

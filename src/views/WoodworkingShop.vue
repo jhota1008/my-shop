@@ -19,3 +19,4 @@ import ProductList from '../components/ProductList.vue'
 <style scoped>
 /* Add any custom styles here */
 </style>
+
